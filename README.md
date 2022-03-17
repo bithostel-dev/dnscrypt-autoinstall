@@ -1,4 +1,4 @@
-dnscrypt-autoinstall
+dnscrypt-autoinstall (changes IPs for resolv.conf - Debian 11 OK)
 ====================
 
 ## Decription
@@ -12,7 +12,8 @@ This script should work on new(er) debian'ish releases.
 
 Todo: proper init script, download newest version, handle failed download, fix quirks
 
+
 ## Installation
-`wget https://raw.github.com/simonclausen/dnscrypt-autoinstall/master/dnscrypt-autoinstall.sh`
+`wget https://raw.github.com/bithostel-dev/dnscrypt-autoinstall/master/dnscrypt-autoinstall.sh`
 `chmod +x dnscrypt-autoinstall.sh`
 `./dnscrypt-autoinstall.sh`
