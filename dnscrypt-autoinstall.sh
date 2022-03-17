@@ -13,7 +13,7 @@
 # Version: 0.3
 #
 # Todo: proper init script, download newest version, handle failed download, fix quirks
-#
+# Just change ips to correct bind - in the resolv.conf | working on Debian 11 Bullseye
 ###
 
 # Are you root?
@@ -49,7 +49,7 @@ function config_interface {
 		WHICHRESOLVER=dnscrypteu
 		;;
 		2)
-		WHICHRESOLVER=opendns
+		WHICHRESOLVER=opendnshttps://github.com/alterstep/dnscrypt-autoinstall/blob/6da93c4dbc1ccd3b2f40336b9761bb0b11e7ebfb/dnscrypt-autoinstall.sh
 		;;
 		3)
 		WHICHRESOLVER=cloudns
@@ -82,7 +82,7 @@ function config_do {
 }
 
 if [ -e /usr/local/sbin/dnscrypt-proxy ]; then
-	DNSCRYPTINST=true
+	DNSCRYPTINST=truehttps://github.com/alterstep/dnscrypt-autoinstall/blob/6da93c4dbc1ccd3b2f40336b9761bb0b11e7ebfb/dnscrypt-autoinstall.sh
 fi
 
 if [ -e /usr/local/lib/libsodium.so ]; then
@@ -164,7 +164,7 @@ else
 		echo ""
 		read -n1 -r -p "Press any key to continue..."
 		clear
-		echo ""
+		echo ""https://github.com/alterstep/dnscrypt-autoinstall/blob/6da93c4dbc1ccd3b2f40336b9761bb0b11e7ebfb/dnscrypt-autoinstall.sh
 		echo "Would you like to see a list of supported providers?"
 		read -p "(DNSCrypt.eu is default) [y/n]: " -e -i n SHOWLIST
 		if [ $SHOWLIST == "y" ]; then
@@ -209,8 +209,9 @@ else
 		
 		# Set up resolv.conf to use dnscrypt
 		mv /etc/resolv.conf /etc/resolv.conf-dnscryptbak
-		echo "nameserver 127.0.0.1" > /etc/resolv.conf
-		echo "nameserver 127.0.0.2" >> /etc/resolv.conf
+		echo "nameserver 127.0.2.1" > /etc/resolv.conf
+		echo "nameserver 127.0.2.2" >> /etc/resolv.conf
+		echo "nameserver 208.67.222.222" >> /etc/resolv.conf
 		
 		# Clean up
 		cd
