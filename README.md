@@ -14,6 +14,5 @@ Todo: proper init script, download newest version, handle failed download, fix q
 
 
 ## Installation
-`wget https://raw.github.com/bithostel-dev/dnscrypt-autoinstall/master/dnscrypt-autoinstall.sh`
-`chmod +x dnscrypt-autoinstall.sh`
-`./dnscrypt-autoinstall.sh`
+wget https://raw.github.com/bithostel-dev/dnscrypt-autoinstall/master/dnscrypt-autoinstall.sh && sudo bash dnscrypt-autoinstall.sh
+
